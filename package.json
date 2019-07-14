@@ -1,0 +1,15 @@
+{
+  "name": "pi-switch-control",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node server.js",
+    "scan": "tplight scan",
+     "on": "tplight on",
+     "off": "tplight off"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "tplink-lightbulb": "^1.5.1",
+    "tuyapi": "github:codetheweb/tuyapi"
+  }
+}
