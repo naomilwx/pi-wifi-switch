@@ -1,0 +1,12 @@
+[Unit]
+Description=Run motion sensor that triggers switches
+After=switch-control.service
+
+[Service]
+Type=simple
+User=pi
+ExecStart=/usr/bin/python3 /home/pi/Documents/pi-switch-control/motion-sensor/run.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

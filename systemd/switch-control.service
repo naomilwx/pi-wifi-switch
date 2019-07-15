@@ -1,0 +1,14 @@
+[Unit]
+Description=App to control light switches
+After=network.target
+
+[Service]
+Environment=NODE_PORT=8080
+Type=simple
+User=pi
+ExecStart=/usr/bin/node /home/pi/Documents/pi-switch-control/server.js
+Restart=always
+RemainAfterExit=no
+
+[Install]
+WantedBy=multi-user.target
