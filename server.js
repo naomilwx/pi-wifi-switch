@@ -172,9 +172,11 @@ async function initialise() {
 	const socketIds = env.socketIds.split(":");
 	const socketKeys = env.socketKeys.split(":");
 	const socketKeyPairs =  socketIds.map((id, idx) => ({ id, key: socketKeys[idx] }));
-
 	const smartSockets = socketKeyPairs.map(i => new TuyAPI(i));
-	const tpPlugs = [new TPLink('192.168.4.19'), new TPLink('192.168.4.33')];
+
+	const ips = env.ips.split(":");
+	const tpPlugs = ips.map(i => new TPLink(i));
+
 	for (let i = 0; i < smartSockets.length; i++) {
 		console.log('finding socket', i+1);
 		await smartSockets[i].find();
